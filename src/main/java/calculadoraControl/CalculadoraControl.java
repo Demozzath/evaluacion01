@@ -87,7 +87,8 @@ public class CalculadoraControl extends HttpServlet {
         calculadora.setCantidadAnios(doAnios);
         
         double doResultado = calculadora.calculaInteres();
-        String resultado = String.valueOf(doResultado);
+        double redondeoResultado = Math.round(doResultado*100.0)/100.0;
+        String resultado = String.valueOf(redondeoResultado);
         
         request.setAttribute("resultado", resultado);
         request.setAttribute("capitalTotal", capitalTotal);
